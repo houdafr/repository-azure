@@ -24,15 +24,15 @@ jobs:
           npm run build --if-present
           npm run test --if-present
 
-      # Ajouter un check pour vérifier si le répertoire de build existe
+      # Vérification du répertoire de build avec PowerShell
       - name: Check build directory
-        run: ls -al ./dist  # Remplacez 'dist' si votre projet utilise un autre répertoire comme 'build'
+        run: Get-ChildItem -Recurse ./dist
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: ./dist  # Changez ./dist si le répertoire de build est différent
+          path: ./dist  # Assurez-vous que ./dist est correct
 
   deploy:
     runs-on: ubuntu-latest
@@ -62,4 +62,4 @@ jobs:
         with:
           app-name: 'App-azure'
           slot-name: 'Production'
-          package: ./dist  # Assurez-vous que ce chemin est correct
+          package: ./dist
