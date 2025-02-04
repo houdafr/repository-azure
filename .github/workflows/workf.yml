@@ -43,7 +43,7 @@ env:
   CONTAINER_NAME: image-workflow-1738684628456
   CLUSTER_RESOURCE_GROUP: aks
   CLUSTER_NAME: aks-cluster
-  DEPLOYMENT_MANIFEST_PATH: ./manifests
+  DEPLOYMENT_MANIFEST_PATH: src/manifests
   DOCKER_FILE: src/Dockerfile
   BUILD_CONTEXT_PATH: ./
   NAMESPACE: namespace-workflow-1738684628456
