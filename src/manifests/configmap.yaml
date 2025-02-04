@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: workf-config
+  namespace: namespace-workflow-1738684628456
+  labels:
+    app.kubernetes.io/name: workf
+    kubernetes.azure.com/generator: devhub
+data:
